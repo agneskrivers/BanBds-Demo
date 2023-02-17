@@ -13,7 +13,7 @@ import type { ResJSON, IApiReqParamsPhoneNumber } from '@interfaces';
 // Function Type
 type ApiAppLoginSend = (
     req: Request<IApiReqParamsPhoneNumber>,
-    res: Response<ResJSON>
+    res: Response<ResJSON<{ otp: string }>>
 ) => Promise<void>;
 
 const Index: ApiAppLoginSend = async (req, res) => {
@@ -35,9 +35,9 @@ const Index: ApiAppLoginSend = async (req, res) => {
             return;
         }
 
-        const status = await OTPsModel.send(phoneNumber);
+        const data = await OTPsModel.send(phoneNumber);
 
-        if (!status) {
+        if (!data) {
             const { statusCode, message } = new createHttpError.BadRequest();
 
             res.status(statusCode).json({ status: 'Not Process', message });
@@ -45,19 +45,19 @@ const Index: ApiAppLoginSend = async (req, res) => {
             return;
         }
 
-        if (status === 'failed') {
+        if (data === 'failed') {
             res.status(202).json({ status: 'Not Process', message: 'Failed' });
 
             return;
         }
 
-        if (status === 'renew') {
+        if (data === 'renew') {
             res.status(202).json({ status: 'Not Process', message: 'Renew' });
 
             return;
         }
 
-        res.status(200).json({ status: 'Success' });
+        res.status(200).json({ status: 'Success', data });
     } catch (error) {
         const { message } = error as Error;
 

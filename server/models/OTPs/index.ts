@@ -14,14 +14,11 @@ import { handleError } from '@server/helpers';
 // Models
 import { FailedOTPsModel, RenewOTPsModel } from '@server/models';
 
-// Services
-import services from '@server/services';
-
 // Interfaces
 import type { IOtp } from '@interfaces';
 
 // Type
-type ResultSend = 'sent' | 'failed' | 'renew' | null;
+type ResultSend = 'failed' | 'renew' | null | { otp: string };
 
 // Methods Interface
 interface OtpMethods extends IOtp, Document {
@@ -117,10 +114,6 @@ OtpSchema.statics.send = async function (
                 return 'failed';
             }
 
-            const isSent = await services.sms(phoneNumber, otp);
-
-            if (!isSent) return null;
-
             const updateRenew = checkPhoneNumber.renew + 1;
 
             checkPhoneNumber.otp = otp;
@@ -130,12 +123,10 @@ OtpSchema.statics.send = async function (
 
             await checkPhoneNumber.save();
 
-            return 'sent';
+            return {
+                otp,
+            };
         }
-
-        const isSent = await services.sms(phoneNumber, otp);
-
-        if (!isSent) return null;
 
         const expiredAt = new Date(Date.now() + LimitOTP.otp);
 
@@ -148,7 +139,9 @@ OtpSchema.statics.send = async function (
 
         await newPhoneNumber.save();
 
-        return 'sent';
+        return {
+            otp,
+        };
     } catch (error) {
         const { message } = error as Error;
 

@@ -15,7 +15,7 @@ const Index: IClientServiceLoginSend = async (signal, phoneNumber) => {
             },
             signal,
         });
-        const result = (await response.json()) as ResJSON;
+        const result = (await response.json()) as ResJSON<{ otp: string }>;
 
         if (result.status === 'Not Process') {
             if (result.message === 'Renew') return 'Failed';
@@ -25,11 +25,11 @@ const Index: IClientServiceLoginSend = async (signal, phoneNumber) => {
             return 'BadRequest';
         }
 
-        if (result.status !== 'Success') return false;
+        if (result.status !== 'Success') return null;
 
-        return true;
+        return result.data;
     } catch (_) {
-        return false;
+        return null;
     }
 };
 

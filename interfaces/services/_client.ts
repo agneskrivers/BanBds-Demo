@@ -32,7 +32,12 @@ import type {
 type ResultDashboard = IApiWebDashboard | null;
 type ResultDistrict = IApiWebDistrict | null;
 type ResultLoginCheck = 'BadRequest' | 'Token' | boolean | null;
-type ResultLoginSend = 'Renew' | 'Failed' | 'BadRequest' | boolean;
+type ResultLoginSend =
+    | 'Renew'
+    | 'Failed'
+    | 'BadRequest'
+    | null
+    | { otp: string };
 type ResultNewsInfo = IApiWebNewsInfo | 'NotFound' | null;
 type ResultNewsShortlist = IApiWebNewsShortlist | 'BadRequest' | null;
 type ResultPostCreate = 'Unauthorized' | 'BadRequest' | boolean;

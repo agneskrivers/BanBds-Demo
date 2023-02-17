@@ -197,6 +197,8 @@ const Index: FunctionComponent<Props> = ({ onClose }) => {
                 return;
             }
 
+            alert(`Mã OTP của bạn là: ${data.otp}`);
+
             setIsModalPhone(false);
             setIsModalConfirm(true);
         };
