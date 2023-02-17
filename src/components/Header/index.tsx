@@ -272,7 +272,10 @@ const Index: FunctionComponent = () => {
                                 [Styles.active]: isMenu,
                             })}
                         >
-                            <Link href='#' className={Styles.menu_item}>
+                            <Link
+                                href='https://drive.google.com/file/d/1evUoFIuEKhvnVpIcbBqpV-9BEEJk7NVe/view?usp=sharing'
+                                className={Styles.menu_item}
+                            >
                                 <>
                                     <i className='material-icons'>download</i>{' '}
                                     Tải APP
