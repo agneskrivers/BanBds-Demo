@@ -1,0 +1,128 @@
+.box {
+    padding: 30px;
+
+    &_close {
+        display: flex;
+        justify-content: flex-end;
+
+        & button {
+            font-size: 18px;
+        }
+    }
+
+    &_content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &_title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 0;
+        color: #343434;
+    }
+
+    &_description {
+        font-size: 14px;
+        color: #343434;
+        font-weight: 400;
+        line-height: 21px;
+        margin-bottom: 0;
+    }
+
+    &_input {
+        margin: 25px;
+        height: 60px;
+
+        & span {
+            background-color: #fff;
+            border-right: none;
+            padding: 0 15px;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            color: var(--bs-gray);
+        }
+
+        & input {
+            border-left: none;
+            padding-left: 0;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+
+            &:focus {
+                border-color: #ced4da;
+                box-shadow: none;
+                font-size: 16px;
+            }
+
+            &::placeholder {
+                font-size: 16px;
+            }
+        }
+    }
+
+    &_btn {
+        width: 100%;
+        font-size: 18px;
+        padding: 12px 14px;
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    &_term {
+        line-height: 1.64;
+        margin-bottom: 27px;
+        font-size: 13px;
+        text-align: center;
+        margin-top: 25px;
+        color: #626262;
+        font-weight: 400;
+
+        & a,
+        button {
+            color: #366feb;
+            font-weight: 500;
+        }
+
+        & button {
+            background-color: #fff;
+            border: none;
+        }
+    }
+}
+
+.upload {
+    margin-left: 1.5rem;
+
+    &_icon {
+        color: #fff;
+        background-color: #0dcaf0;
+        padding: 5px 0;
+        border-radius: 5px;
+        width: 140px;
+
+        & span {
+            font-size: 16px;
+            margin-left: 0.5rem;
+        }
+    }
+
+    & p {
+        font-size: 12px;
+        margin-top: 10px !important;
+        color: var(--bs-gray);
+    }
+}
+
+.error {
+    display: flex;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 99999;
+    background-color: #fff;
+    border-radius: 0.375rem;
+}

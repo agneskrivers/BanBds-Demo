@@ -1,0 +1,16 @@
+@media only screen and (max-width: 48em) {
+    .footer_list {
+        &_title {
+            text-align: center;
+        }
+
+        & ul {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        & li {
+            width: 50%;
+        }
+    }
+}

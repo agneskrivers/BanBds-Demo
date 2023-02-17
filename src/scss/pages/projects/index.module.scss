@@ -1,0 +1,68 @@
+.title {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.2px;
+}
+
+.total {
+    font-size: 14px;
+    line-height: 20px;
+    color: #646464;
+}
+
+.content {
+    margin-top: 15px;
+}
+
+.box {
+    padding: 20px;
+    border: 1px solid #c6c6c6;
+    border-radius: 10px;
+    background-color: #ffffff;
+    position: sticky;
+    top: 152px;
+
+    &_title {
+        font-size: 18px;
+        color: #2c2c2c;
+    }
+
+    &_item {
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 400;
+        color: #777777;
+        background: transparent;
+        border: none;
+        text-align: left;
+
+        &:hover {
+            color: var(--bs-gray-800);
+        }
+    }
+
+    &_content {
+        margin-top: 1rem;
+        max-height: 240px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &_more {
+        display: flex;
+        align-items: center;
+        border: none;
+        background-color: transparent;
+        color: var(--bs-danger);
+        font-weight: 600;
+
+        & i {
+            color: var(--bs-danger);
+        }
+    }
+
+    &_collapsed {
+        max-height: initial;
+    }
+}

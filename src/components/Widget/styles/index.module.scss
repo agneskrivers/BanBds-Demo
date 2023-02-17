@@ -1,0 +1,32 @@
+.widget {
+    padding: 15px 10px;
+    border-radius: 8px;
+    box-shadow: 0 1px 7px 0 rgb(0 0 0 / 15%);
+    margin-bottom: 20px;
+
+    &_title {
+        height: 30px;
+        line-height: 30px;
+        padding: 0 15px;
+        border-top-right-radius: 8px;
+        background-color: var(--bs-primary);
+        display: inline-block;
+        color: #fff;
+        font-size: 18px;
+        position: relative;
+
+        &:after {
+            content: '';
+            border-right: 12px solid transparent;
+            border-top: 9px solid;
+            border-top-color: var(--bs-primary);
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+        }
+    }
+
+    &_content {
+        margin-top: 10px;
+    }
+}

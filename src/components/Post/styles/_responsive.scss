@@ -1,0 +1,13 @@
+@media only screen and (max-width: 48em) {
+    .product {
+        height: auto;
+
+        &_content {
+            padding-left: 1.5rem;
+        }
+
+        &_img_info {
+            left: 5px;
+        }
+    }
+}
