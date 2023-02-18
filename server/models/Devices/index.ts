@@ -38,7 +38,6 @@ const DeviceSchema = new Schema<IDevice, DeviceModel>(
             type: String,
             required: true,
             immutable: true,
-            unique: true,
         },
         os: { type: String, required: true },
 
