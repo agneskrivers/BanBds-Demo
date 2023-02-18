@@ -45,7 +45,7 @@ const DeviceSchema = new Schema<IDevice, DeviceModel>(
         model: { type: String, default: null },
         device: { type: String, default: null },
         lastUpdate: { type: Number, default: null },
-        mac: { type: String, unique: true, required: true },
+        mac: { type: String, required: true },
     },
     {
         timestamps: false,
