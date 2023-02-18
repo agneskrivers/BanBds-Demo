@@ -273,7 +273,7 @@ const Index: FunctionComponent = () => {
                             })}
                         >
                             <Link
-                                href='https://drive.google.com/file/d/1evUoFIuEKhvnVpIcbBqpV-9BEEJk7NVe/view?usp=sharing'
+                                href='https://github.com/agneskrivers/App-BanBDS/releases/download/0.1.0/banbds.apk'
                                 className={Styles.menu_item}
                             >
                                 <>

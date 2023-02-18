@@ -118,13 +118,13 @@ const Index: FunctionComponent = () => {
                                     lg={8}
                                     className='d-flex justify-content-around align-items-center'
                                 >
-                                    <a href='https://play.google.com/store/games'>
+                                    <a href='https://github.com/agneskrivers/App-BanBDS/releases/download/0.1.0/banbds.apk'>
                                         <Image
                                             src='/images/common/google-play.png'
                                             height={30}
                                         />
                                     </a>
-                                    <a href='https://apps.apple.com/us/app/apple-store/id375380948'>
+                                    <a href='#'>
                                         <Image
                                             src='/images/common/app-store.png'
                                             height={30}
